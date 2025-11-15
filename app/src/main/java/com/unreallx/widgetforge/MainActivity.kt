@@ -17,7 +17,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
 import com.unreallx.widgetforge.ui.theme.WidgetForgeTheme
 
 class MainActivity : ComponentActivity() {
@@ -51,20 +50,12 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         )
         Button(onClick = {
             val appWidgetManager = AppWidgetManager.getInstance(context)
-            val myProvider = ComponentName(context, MyWidgetReceiver::class.java)
+            val myProvider = ComponentName(context, CounterWidget::class.java)
             if (appWidgetManager.isRequestPinAppWidgetSupported) {
                 appWidgetManager.requestPinAppWidget(myProvider, null, null)
             }
         }) {
             Text("Add Widget to Home Screen")
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    WidgetForgeTheme {
-        Greeting("Android")
     }
 }
