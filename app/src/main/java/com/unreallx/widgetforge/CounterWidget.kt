@@ -68,7 +68,6 @@ class CounterWidget : GlanceAppWidget() {
 }
 
 class IncrementAction : ActionCallback {
-
     override suspend fun onAction(
         context: Context,
         glanceId: GlanceId,
