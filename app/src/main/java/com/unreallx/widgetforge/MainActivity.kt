@@ -3,6 +3,7 @@ package com.unreallx.widgetforge
 import android.appwidget.AppWidgetManager
 import android.content.ComponentName
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -26,7 +27,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             WidgetForgeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
+                    AddWidget(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
@@ -37,7 +38,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun AddWidget(name: String, modifier: Modifier = Modifier) {
     val context = LocalContext.current
 
     Column(
@@ -45,17 +46,30 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(
-            text = "Hello $name!"
-        )
+        Text(text = "Hello $name!")
+
         Button(onClick = {
             val appWidgetManager = AppWidgetManager.getInstance(context)
-            val myProvider = ComponentName(context, CounterWidget::class.java)
-            if (appWidgetManager.isRequestPinAppWidgetSupported) {
-                appWidgetManager.requestPinAppWidget(myProvider, null, null)
+            val provider = ComponentName(context, CounterWidgetReceiver::class.java)
+
+            val supported = appWidgetManager.isRequestPinAppWidgetSupported
+
+            val result = if (supported) {
+                appWidgetManager.requestPinAppWidget(provider, null, null)
+            } else {
+                false
+            }
+
+            if (!result) {
+                Toast.makeText(
+                    context,
+                    "Add widget: Desktop -> Widget",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }) {
             Text("Add Widget to Home Screen")
         }
     }
 }
+
