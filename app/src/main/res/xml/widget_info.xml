@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android">
     <initialLayout>@layout/widget_layout_placeholder</initialLayout>
-    <minWidth>250dp</minWidth>
-    <minHeight>110dp</minHeight>
+    <minWidth>550dp</minWidth>
+    <minHeight>410dp</minHeight>
     <updatePeriodMillis>1800000</updatePeriodMillis>
     <resizeMode>horizontal|vertical</resizeMode>
     <widgetCategory>home_screen</widgetCategory>
