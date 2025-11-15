@@ -58,10 +58,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation("androidx.glance:glance-appwidget:1.1.1")
-
-    // Опционально: для Material3 в виджетах (кнопки, темы)
     implementation("androidx.glance:glance-material3:1.1.1")
-
-    // Для превью в Studio (альфа, но полезно)
     debugImplementation("androidx.glance:glance-appwidget-preview:1.0.0-alpha06")
 }

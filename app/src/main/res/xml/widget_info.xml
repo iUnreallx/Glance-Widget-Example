@@ -3,7 +3,7 @@
     <initialLayout>@layout/widget_layout_placeholder</initialLayout>
     <minWidth>250dp</minWidth>
     <minHeight>110dp</minHeight>
-    <updatePeriodMillis>1800000</updatePeriodMillis> <!-- Каждые 30 мин -->
+    <updatePeriodMillis>1800000</updatePeriodMillis>
     <resizeMode>horizontal|vertical</resizeMode>
     <widgetCategory>home_screen</widgetCategory>
     <description>@string/widget_description</description>
