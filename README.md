@@ -1,4 +1,4 @@
-# Glance Widget Example
+# Glance Widget Example 🔥
 
 [![Minimum API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat-square)](https://android-arsenal.com/api?level=21)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9%2B-blue.svg?style=flat-square)](https://kotlinlang.org)
@@ -26,15 +26,11 @@ Perfect starting point to add a beautiful, clickable, adaptive widget to your Co
 
 - Fully working widget from scratch
 - Clickable areas (whole widget + individual elements)
-- State persistence with `PreferencesGlanceStateDefinition`
-- Periodic updates via WorkManager
-- Adaptive layout (switch to `Responsive` in one line)
-- Material You + dark theme support
 - Instant live previews in Android Studio (no device needed)
 - Clean, copy-paste-ready code
 
-## Quick Start (< 2 minutes)
+## Quick Start
 
 ```bash
-git clone https://github.com/yourusername/Glance-Widget-Example.git
+git clone https://github.com/iUnreallx/Glance-Widget-Example.git
 cd Glance-Widget-Example
